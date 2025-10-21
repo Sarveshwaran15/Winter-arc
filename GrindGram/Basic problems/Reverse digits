@@ -1,0 +1,23 @@
+Input : n = 200
+Output: 2
+Explanation: By reversing the digits of number, number will change into 2.
+
+// User function Template for Java
+
+class Solution {
+    public int reverseDigits(int n) {
+        // Code here
+        int rev = 0;
+        boolean leadingZero = true;
+        while (n > 0) {
+            int digit = n % 10;
+            n /= 10;
+            if (leadingZero && digit == 0) {
+                continue;
+            }
+            leadingZero = false;
+            rev = rev * 10 + digit;
+        }
+        return rev;
+    }
+}
