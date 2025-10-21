@@ -1,0 +1,21 @@
+Input: n = 12
+Output: 2
+Explanation: 1, 2 when both divide 12 leaves remainder 0.
+
+// User function Template for Java
+
+class Solution {
+    static int evenlyDivides(int n) {
+        // code here
+        int count = 0;
+        int value = n;
+        while (n > 0) {
+            int digit = n % 10;
+            if (digit != 0 && value % digit == 0) {
+                count++;
+            }
+            n /= 10;
+        }
+        return count;
+    }
+}
