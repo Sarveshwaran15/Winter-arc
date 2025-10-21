@@ -1,0 +1,26 @@
+Input: a = "3", b = "10"
+Output: 9
+Explanation: 310 = 59049. Last digit is 9.
+
+// User function Template for Java
+
+class Solution {
+    static int getLastDigit(String a, String b) {
+        // code here
+         if (b.equals("0"))
+            return 1;
+        int lastDigitA = a.charAt(a.length() - 1) - '0';
+        int mod = getMod(b, 4);
+        if (mod == 0)
+            mod = 4; 
+        int result = (int)Math.pow(lastDigitA, mod) % 10;
+        return result;
+    }
+    static int getMod(String num, int m) {
+        int res = 0;
+        for (int i = 0; i < num.length(); i++) {
+            res = (res * 10 + (num.charAt(i) - '0')) % m;
+        }
+        return res;
+    }
+};
