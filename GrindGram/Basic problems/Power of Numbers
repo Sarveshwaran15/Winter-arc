@@ -1,0 +1,18 @@
+Input: n = 10
+Output: 10
+Explanation: The reverse of 10 is 1 (leading zero is discarded), and 10 raised to the power 1 is 10.
+
+class Solution {
+    public int reverseExponentiation(int n) {
+        // code here
+        int rev=0;
+        int value=n;
+        while(n>0)
+        {
+            int digit=n%10;
+            rev=(rev*10)+digit;
+            n/=10;
+        }
+        return (int)(Math.pow(value,rev));
+    }
+}
