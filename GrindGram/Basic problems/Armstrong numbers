@@ -1,0 +1,20 @@
+Input: n = 153
+Output: true
+
+// User function Template for Java
+class Solution {
+    static boolean armstrongNumber(int n) {
+        // code here
+        int sum=0;
+        int value=n;
+        while(n>0)
+        {
+            int digit=n%10;
+            sum+=Math.pow(digit,3);
+            n/=10;
+        }
+        if(value==sum)
+            return true;
+        return false;
+    }
+}
