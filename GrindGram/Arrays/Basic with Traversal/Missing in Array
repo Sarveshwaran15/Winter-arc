@@ -1,0 +1,14 @@
+Input: arr[] = [1, 2, 3, 5]
+Output: 4
+
+class Solution {
+    int missingNum(int arr[]) {
+        // code here
+         int n = arr.length + 1; 
+        int total = n * (n + 1) / 2; // sum of 1 to n
+        int sum = 0;
+        for (int num : arr)
+            sum += num;
+        return total - sum;
+    }
+}
