@@ -1,0 +1,20 @@
+Input: arr[] = [2, 3, 2, 3, 5]
+Output: [0, 2, 2, 0, 1]
+
+class Solution {
+    public List<Integer> frequencyCount(int[] arr) {
+        // code here
+        List<Integer> result=new ArrayList<>();
+        int[] hash=new int[arr.length+1];
+        for(int i=0;i<arr.length;i++)
+        {
+            if(arr[i]<=arr.length)
+            hash[arr[i]]++;
+        }
+        for(int i=1;i<hash.length;i++)
+        {
+            result.add(hash[i]);
+        }
+        return result;
+    }
+}
